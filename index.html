@@ -1,0 +1,133 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Covid-19 Chart</title>
+  <meta name="description" content="Chartjs Chart of the Corona Numbers from Germany">
+
+</head>
+
+<body>
+  <div class="chart-container" style="position: relative; height:40vh; width:80vw">
+		<canvas id="myChart"></canvas>
+	</div>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
+<script>
+	//get dataset 
+	//https://raw.githubusercontent.com/balu-/covid-19_Deutschland_Fallzahlen/master/aggregation/data.json
+	 function loadJSON(callback) {   
+
+	    var xobj = new XMLHttpRequest();
+	        xobj.overrideMimeType("application/json");
+	    xobj.open('GET', 'https://raw.githubusercontent.com/balu-/covid-19_Deutschland_Fallzahlen/master/aggregation/data.json', true); // Replace 'appDataServices' with the path to your file
+	    xobj.onreadystatechange = function () {
+	          if (xobj.readyState == 4 && xobj.status == "200") {
+	            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+	            callback(xobj.responseText);
+	          }
+	    };
+	    xobj.send(null);  
+	 }
+
+	 var dataset = []
+
+
+	var timeFormat = 'YY_MM_DD_HH_mm';
+    var ctx = document.getElementById('myChart');
+	var myChart = new Chart(ctx, {
+		type: 'line',
+	    data: {
+	    	datasets: [],
+		},
+	    options: {
+				title: {
+					text: 'Chart.js Time Scale'
+				},
+				scales: {
+					xAxes: [{
+						type: 'time',
+						distribution: 'series',
+						time: {
+							parser: timeFormat,
+							// round: 'day'
+							tooltipFormat: 'll HH:mm'
+						},
+						scaleLabel: {
+							display: true,
+							labelString: 'Date'
+						}
+					}],
+					yAxes: [{
+						scaleLabel: {
+							display: true,
+							labelString: 'value'
+						}
+					}]
+				},
+			}
+	});
+
+	loadJSON(function(response) {
+	  // Parsing JSON string into object
+	    dataset = JSON.parse(response);
+	    //function addData(chart, label, data) {
+	    var red = 0;
+	    var blue = 0;
+	    var green = 0;
+	    var state = 0;
+		//myChart.data.labels.push(label);
+		for (var i = 0; i < dataset.length; i++) {
+			for (var j = 0; j < dataset[i]['data'].length; j++) {
+				dataset[i]['data'][j]['x'] = moment(dataset[i]['data'][j]['x'],timeFormat)
+			}
+			dataset[i]['data'].sort(function(a,b){
+				if(a['x'] > b['x'])
+					return -1;
+				else if (a['x'] < b['x'])
+					return 1;
+				else 
+					return 0;
+
+			})
+			dataset[i]['borderColor'] = 'rgb('+red+', '+green+', '+blue+')';
+			if(state == 0){
+				red += 70; 
+				if( red > 250 ) {
+					state = 1; 
+					red = 10;
+				}
+			} else if(state == 1){
+				green += 70; 
+				if( green > 250 ) {
+					state = 2; 
+					green = 10;
+				}
+			} else if(state == 2){
+				blue += 70; 
+				if( blue > 250 ) {
+					state = 3; 
+					blue = 10;
+				}
+			} else if(state == 3){
+				blue += 30; 
+				red += 30;
+				if( blue > 250 || red > 250) {
+					state = 0; 
+					blue = 150;
+					red = 0;
+				}
+			}
+				
+		}
+
+		myChart.data.datasets = dataset;
+		myChart.update();
+		//}
+
+	 });
+</script>
+</body>
+</html>
