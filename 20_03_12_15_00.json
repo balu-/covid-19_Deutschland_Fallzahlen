@@ -1,18 +1,18 @@
 [
     {
-        "(Todes­fälle)": "(1)",
-        "(be­stä­tig­te Todes­fälle)": "(1)",
         "Beson­ders be­trof­fene Gebiete in Deutsch­land": "",
         "Bundesland": "Baden-Württemberg",
         "Fälle": "331",
-        "be­stä­tig­te Fälle": "454"
+        "Todes­fälle": "1",
+        "be­stä­tig­te Fälle": "454",
+        "be­stä­tig­te Todes­fälle": "1"
     },
     {
-        "(be­stä­tig­te Todes­fälle)": "(1)",
         "Beson­ders be­trof­fene Gebiete in Deutsch­land": "",
         "Bundesland": "Bayern",
         "Fälle": "317",
-        "be­stä­tig­te Fälle": "500"
+        "be­stä­tig­te Fälle": "500",
+        "be­stä­tig­te Todes­fälle": "1"
     },
     {
         "Beson­ders be­trof­fene Gebiete in Deutsch­land": "",
@@ -57,12 +57,12 @@
         "be­stä­tig­te Fälle": "129"
     },
     {
-        "(Todes­fälle)": "(2)",
-        "(be­stä­tig­te Todes­fälle)": "(3)",
         "Beson­ders be­trof­fene Gebiete in Deutsch­land": "Landkreis Heinsberg",
         "Bundesland": "Nordrhein-Westfalen",
         "Fälle": "688",
-        "be­stä­tig­te Fälle": "688"
+        "Todes­fälle": "2",
+        "be­stä­tig­te Fälle": "688",
+        "be­stä­tig­te Todes­fälle": "3"
     },
     {
         "Beson­ders be­trof­fene Gebiete in Deutsch­land": "",
@@ -101,11 +101,11 @@
         "be­stä­tig­te Fälle": "14"
     },
     {
-        "(Todes­fälle)": "(3)",
-        "(be­stä­tig­te Todes­fälle)": "(5)",
         "Beson­ders be­trof­fene Gebiete in Deutsch­land": "",
         "Bundesland": "Gesamt",
         "Fälle": "1.892",
-        "be­stä­tig­te Fälle": "2.369"
+        "Todes­fälle": "3",
+        "be­stä­tig­te Fälle": "2.369",
+        "be­stä­tig­te Todes­fälle": "5"
     }
 ]
