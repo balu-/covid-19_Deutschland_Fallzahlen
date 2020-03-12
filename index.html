@@ -10,8 +10,13 @@
 </head>
 
 <body>
-  <div class="chart-container" style="position: relative; height:40vh; width:80vw">
-		<canvas id="myChart"></canvas>
+	<div>
+	  <div class="chart-container" style="position: relative; height:40vh; width:80vw; margin-left: auto;
+    margin-right: auto;">
+	  		<h3> Covid-19-Erkrankte in Deutschland</h3>
+	  		<p> Einzelne Datenreihen k&ouml;nnen via click auf die Legende ein-&amp;ausgeblendet werden.</p>
+			<canvas id="myChart"></canvas>
+		</div>
 	</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
@@ -74,7 +79,7 @@
 	  // Parsing JSON string into object
 	    dataset = JSON.parse(response);
 	    //function addData(chart, label, data) {
-	    var red = 0;
+	    var red = 50;
 	    var blue = 0;
 	    var green = 0;
 	    var state = 0;
@@ -97,7 +102,7 @@
 				red += 70; 
 				if( red > 250 ) {
 					state = 1; 
-					red = 10;
+					red = 50;
 				}
 			} else if(state == 1){
 				green += 70; 
