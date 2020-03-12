@@ -1,0 +1,62 @@
+[
+    {
+        "Bundesland": "Baden-Württemberg",
+        "Fälle": "26"
+    },
+    {
+        "Bundesland": "Bayern",
+        "Fälle": "35"
+    },
+    {
+        "Bundesland": "Berlin",
+        "Fälle": "3"
+    },
+    {
+        "Bundesland": "Brandenburg",
+        "Fälle": "1"
+    },
+    {
+        "Bundesland": "Bremen",
+        "Fälle": "1"
+    },
+    {
+        "Bundesland": "Hamburg",
+        "Fälle": "2"
+    },
+    {
+        "Bundesland": "Hessen",
+        "Fälle": "10"
+    },
+    {
+        "Bundesland": "Niedersachsen",
+        "Fälle": "1"
+    },
+    {
+        "Bundesland": "Nordrhein-Westfalen",
+        "Fälle": "101"
+    },
+    {
+        "Bundesland": "Rheinland-Pfalz",
+        "Fälle": "2"
+    },
+    {
+        "Bundesland": "Sachsen",
+        "Fälle": "1"
+    },
+    {
+        "Bundesland": "Schleswig Holstein",
+        "Fälle": "2"
+    },
+    {
+        "Bundesland": "Thüringen",
+        "Fälle": "1"
+    },
+    {
+        "Bundesland": "Repatriierte",
+        "Fälle": "2"
+    },
+    {
+        "Bundesland": "Gesamt",
+        "Fälle": "188"
+    }
+]
