@@ -11,11 +11,19 @@
 
 <body>
 	<div>
-	  <div class="chart-container" style="position: relative; height:40vh; width:80vw; margin-left: auto;
+	  <div class="chart-container" style=" width:80vw; margin-left: auto;
     margin-right: auto;">
 	  		<h3> Covid-19-Erkrankte in Deutschland</h3>
 	  		<p> Einzelne Datenreihen k&ouml;nnen via click auf die Legende ein-&amp;ausgeblendet werden.</p>
 			<canvas id="myChart"></canvas>
+		</div>
+	</div>
+	<div>
+	  <div class="pchart-container" style=" width:80vw; margin-left: auto;
+    margin-right: auto;">
+	  		<h3> Covid-19-Erkrankte Prozentualeveränderung zum Vorwert</h3>
+	  		<p> Einzelne Datenreihen k&ouml;nnen via click auf die Legende ein-&amp;ausgeblendet werden.</p>
+			<canvas id="pChart"></canvas>
 		</div>
 	</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
@@ -75,9 +83,45 @@
 			}
 	});
 
+
+	var pctx = document.getElementById('pChart');
+	var pChart = new Chart(pctx, {
+		type: 'line',
+	    data: {
+	    	datasets: [],
+		},
+	    options: {
+				title: {
+					text: 'Chart.js Time Scale'
+				},
+				scales: {
+					xAxes: [{
+						type: 'time',
+						distribution: 'series',
+						time: {
+							parser: timeFormat,
+							// round: 'day'
+							tooltipFormat: 'll HH:mm'
+						},
+						scaleLabel: {
+							display: true,
+							labelString: 'Date'
+						}
+					}],
+					yAxes: [{
+						scaleLabel: {
+							display: true,
+							labelString: 'Prozentualeveränderung'
+						}
+					}]
+				},
+			}
+	});
+
 	loadJSON(function(response) {
 	  // Parsing JSON string into object
 	    dataset = JSON.parse(response);
+	    pdataset = JSON.parse(response);
 	    //function addData(chart, label, data) {
 	    var red = 50;
 	    var blue = 0;
@@ -130,7 +174,70 @@
 
 		myChart.data.datasets = dataset;
 		myChart.update();
-		//}
+
+		pdataset = JSON.parse(response);
+	    //function addData(chart, label, data) {
+	    var red = 50;
+	    var blue = 0;
+	    var green = 0;
+	    var state = 0;
+		for (var i = 0; i < pdataset.length; i++) {
+			for (var j = 0; j < pdataset[i]['data'].length; j++) {
+				pdataset[i]['data'][j]['x'] = moment(pdataset[i]['data'][j]['x'],timeFormat)
+			}
+			pdataset[i]['data'].sort(function(a,b){
+				if(a['x'] > b['x'])
+					return -1;
+				else if (a['x'] < b['x'])
+					return 1;
+				else 
+					return 0;
+
+			})
+
+			//calc new values
+			for (var j = 0; j < pdataset[i]['data'].length -1; j++) {
+				//console.log(pdataset[i]['data'][j]['x'] + ":" +pdataset[i]['data'][j]['y'])
+				v =  (pdataset[i]['data'][j]['y']/pdataset[i]['data'][j+1]['y'])
+				v = (v -1 ) * 100
+				//console.log("V: "+v + " - "+ pdataset[i]['data'][j]['y']+"/"+pdataset[i]['data'][j+1]['y'])
+				pdataset[i]['data'][j]['y']= v //pdataset[i]['data'][j]['y']/pdataset[i]['data'][j-1]['y']
+			
+			}
+			pdataset[i]['data'][pdataset[i]['data'].length-1]['y'] = 100
+
+			pdataset[i]['borderColor'] = 'rgb('+red+', '+green+', '+blue+')';
+			if(state == 0){
+				red += 70; 
+				if( red > 250 ) {
+					state = 1; 
+					red = 50;
+				}
+			} else if(state == 1){
+				green += 70; 
+				if( green > 250 ) {
+					state = 2; 
+					green = 10;
+				}
+			} else if(state == 2){
+				blue += 70; 
+				if( blue > 250 ) {
+					state = 3; 
+					blue = 10;
+				}
+			} else if(state == 3){
+				blue += 30; 
+				red += 30;
+				if( blue > 250 || red > 250) {
+					state = 0; 
+					blue = 150;
+					red = 0;
+				}
+			}
+				
+		}
+		pChart.data.datasets = pdataset;
+		pChart.update();
 
 	 });
 </script>
