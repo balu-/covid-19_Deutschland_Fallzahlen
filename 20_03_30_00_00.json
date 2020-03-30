@@ -1,7 +1,7 @@
 [
     {
         "Bundesland": "Baden-Württemberg",
-        "Dif­fe­renz zum Vor­tag": "+1.149*",
+        "Dif­fe­renz zum Vor­tag": "+1.149",
         "Erkr./ 100.000 Einw.": "99",
         "Fälle": "10.943",
         "Todes­fälle": "119"
@@ -43,7 +43,7 @@
     },
     {
         "Bundesland": "Hessen",
-        "Dif­fe­renz zum Vor­tag": "+486*",
+        "Dif­fe­renz zum Vor­tag": "+486",
         "Erkr./ 100.000 Einw.": "49",
         "Fälle": "3.091",
         "Todes­fälle": "13"
@@ -78,7 +78,7 @@
     },
     {
         "Bundesland": "Saarland",
-        "Dif­fe­renz zum Vor­tag": "+146*",
+        "Dif­fe­renz zum Vor­tag": "+146",
         "Erkr./ 100.000 Einw.": "71",
         "Fälle": "706",
         "Todes­fälle": "7"
