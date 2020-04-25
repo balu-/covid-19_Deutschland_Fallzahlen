@@ -182,6 +182,8 @@
 	    var blue = 0;
 	    var green = 0;
 	    var state = 0;
+
+	    var momentOnlyAfter = moment().subtract(20, 'days').calendar(); // nur prozente Zeigen die nach diesem datum liegen
 		for (var i = 0; i < pdataset.length; i++) {
 			for (var j = 0; j < pdataset[i]['data'].length; j++) {
 				pdataset[i]['data'][j]['x'] = moment(pdataset[i]['data'][j]['x'],timeFormat)
@@ -194,7 +196,7 @@
 				else 
 					return 0;
 
-			})
+			})						
 
 			//calc new values
 			for (var j = 0; j < pdataset[i]['data'].length -1; j++) {
@@ -235,7 +237,11 @@
 					red = 0;
 				}
 			}
-				
+
+			//filter 
+			pdataset[i]['data'] = pdataset[i]['data'].filter(function(data){
+				return data['x'].isSameOrAfter(momentOnlyAfter)
+			});
 		}
 		pChart.data.datasets = pdataset;
 		pChart.update();
