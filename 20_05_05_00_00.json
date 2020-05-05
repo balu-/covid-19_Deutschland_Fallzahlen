@@ -1,0 +1,121 @@
+[
+    {
+        "Bundesland": "Baden-Württemberg",
+        "Dif­fe­renz zum Vor­tag": "+71",
+        "Erkr./ 100.000 Einw.": "293",
+        "Fälle": "32.482",
+        "Todes­fälle": "1.452"
+    },
+    {
+        "Bundesland": "Bayern",
+        "Dif­fe­renz zum Vor­tag": "+165",
+        "Erkr./ 100.000 Einw.": "330",
+        "Fälle": "43.162",
+        "Todes­fälle": "1.949"
+    },
+    {
+        "Bundesland": "Berlin",
+        "Dif­fe­renz zum Vor­tag": "+32",
+        "Erkr./ 100.000 Einw.": "161",
+        "Fälle": "6.042",
+        "Todes­fälle": "154"
+    },
+    {
+        "Bundesland": "Brandenburg",
+        "Dif­fe­renz zum Vor­tag": "+26",
+        "Erkr./ 100.000 Einw.": "117",
+        "Fälle": "2.940",
+        "Todes­fälle": "123"
+    },
+    {
+        "Bundesland": "Bremen",
+        "Dif­fe­renz zum Vor­tag": "+2",
+        "Erkr./ 100.000 Einw.": "131",
+        "Fälle": "895",
+        "Todes­fälle": "31"
+    },
+    {
+        "Bundesland": "Hamburg",
+        "Dif­fe­renz zum Vor­tag": "+8",
+        "Erkr./ 100.000 Einw.": "252",
+        "Fälle": "4.644",
+        "Todes­fälle": "172"
+    },
+    {
+        "Bundesland": "Hessen",
+        "Dif­fe­renz zum Vor­tag": "+36",
+        "Erkr./ 100.000 Einw.": "137",
+        "Fälle": "8.585",
+        "Todes­fälle": "381"
+    },
+    {
+        "Bundesland": "Mecklenburg-\nVorpommern",
+        "Dif­fe­renz zum Vor­tag": "+4",
+        "Erkr./ 100.000 Einw.": "44",
+        "Fälle": "703",
+        "Todes­fälle": "19"
+    },
+    {
+        "Bundesland": "Niedersachsen",
+        "Dif­fe­renz zum Vor­tag": "+55",
+        "Erkr./ 100.000 Einw.": "130",
+        "Fälle": "10.380",
+        "Todes­fälle": "463"
+    },
+    {
+        "Bundesland": "Nordrhein-Westfalen",
+        "Dif­fe­renz zum Vor­tag": "+168",
+        "Erkr./ 100.000 Einw.": "188",
+        "Fälle": "33.728",
+        "Todes­fälle": "1.332"
+    },
+    {
+        "Bundesland": "Rheinland-Pfalz",
+        "Dif­fe­renz zum Vor­tag": "+10",
+        "Erkr./ 100.000 Einw.": "151",
+        "Fälle": "6.160",
+        "Todes­fälle": "182"
+    },
+    {
+        "Bundesland": "Saarland",
+        "Dif­fe­renz zum Vor­tag": "+10",
+        "Erkr./ 100.000 Einw.": "264",
+        "Fälle": "2.618",
+        "Todes­fälle": "139"
+    },
+    {
+        "Bundesland": "Sachsen",
+        "Dif­fe­renz zum Vor­tag": "+43",
+        "Erkr./ 100.000 Einw.": "116",
+        "Fälle": "4.745",
+        "Todes­fälle": "171"
+    },
+    {
+        "Bundesland": "Sachsen-Anhalt",
+        "Dif­fe­renz zum Vor­tag": "+7",
+        "Erkr./ 100.000 Einw.": "72",
+        "Fälle": "1.585",
+        "Todes­fälle": "46"
+    },
+    {
+        "Bundesland": "Schleswig-Holstein",
+        "Dif­fe­renz zum Vor­tag": "+11",
+        "Erkr./ 100.000 Einw.": "97",
+        "Fälle": "2.799",
+        "Todes­fälle": "118"
+    },
+    {
+        "Bundesland": "Thüringen",
+        "Dif­fe­renz zum Vor­tag": "+37",
+        "Erkr./ 100.000 Einw.": "112",
+        "Fälle": "2.392",
+        "Todes­fälle": "99"
+    },
+    {
+        "Bundesland": "Gesamt",
+        "Dif­fe­renz zum Vor­tag": "+685",
+        "Erkr./ 100.000 Einw.": "197",
+        "Fälle": "163.860",
+        "Todes­fälle": "6.831"
+    }
+]
